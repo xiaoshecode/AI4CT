@@ -1,0 +1,2 @@
+# Install core AI4CT package. Optional models: pip install -e ".[deep,boosting]"
+-e .

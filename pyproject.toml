@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai4ct"
+version = "0.1.0"
+description = "Radiotherapy plan complexity and PSQA research workspace"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2,<4",
+  "scipy>=1.13,<2",
+  "scikit-learn>=1.4,<2",
+  "pydicom>=3,<4",
+  "matplotlib>=3.8,<4",
+  "openpyxl>=3.1,<4",
+]
+
+[project.optional-dependencies]
+deep = ["torch>=2.6,<3"]
+boosting = ["lightgbm>=4,<5", "shap>=0.46,<1"]
+quantum = ["pyvqnet>=2.18,<3"]
+notebooks = ["jupyterlab>=4,<5", "ipykernel>=6,<8"]
+reproduction = ["torch>=2.6,<3", "xlrd>=2.0,<3"]
+qbench = ["torch>=2.6,<3", "PennyLane>=0.45,<0.46", "pennylane-lightning>=0.45,<0.46"]
+
+[project.scripts]
+ai4ct = "ai4ct.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ai4ct*"]
+
+[tool.setuptools.package-data]
+ai4ct = ["qbench/LICENSE_Xanadu.txt"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["archive", "notebooks", "examples", "data", "outputs", ".conda"]

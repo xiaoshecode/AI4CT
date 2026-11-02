@@ -1,0 +1,12 @@
+# Transformer Learning Project — Dependencies
+# ==========================================
+# All core deps (torch, matplotlib, tqdm, numpy) should already be in your
+# conda environment. Install extras if needed:
+
+torch>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
+
+# Optional: for faster tokenization (not required; built-in tokenizer works fine)
+# datasets>=2.14.0

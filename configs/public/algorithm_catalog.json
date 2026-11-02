@@ -1,0 +1,1913 @@
+{
+  "schema": "ai4ct-public-algorithm-catalog-v1",
+  "scope": "Methods, aliases, input requirements and code adaptation boundaries only; no private data, run provenance or performance claims.",
+  "count_policy": "Records include families, variants, controls and components. Record count is not the number of independent quantum algorithms.",
+  "inventory": {
+    "repository": "https://github.com/XanaduAI/qml-benchmarks",
+    "path": "src/qml_benchmarks/models/__init__.py",
+    "official_exports": [
+      "CircuitCentricClassifier",
+      "ConvolutionalNeuralNetwork",
+      "DataReuploadingClassifier",
+      "DataReuploadingClassifierNoScaling",
+      "DataReuploadingClassifierNoCost",
+      "DataReuploadingClassifierNoTrainableEmbedding",
+      "DataReuploadingClassifierSeparable",
+      "DressedQuantumCircuitClassifier",
+      "DressedQuantumCircuitClassifierOnlyNN",
+      "DressedQuantumCircuitClassifierSeparable",
+      "IQPKernelClassifier",
+      "IQPVariationalClassifier",
+      "ProjectedQuantumKernel",
+      "QuantumBoltzmannMachine",
+      "QuantumBoltzmannMachineSeparable",
+      "QuantumKitchenSinks",
+      "QuantumMetricLearner",
+      "QuanvolutionalNeuralNetwork",
+      "SeparableVariationalClassifier",
+      "SeparableKernelClassifier",
+      "TreeTensorClassifier",
+      "VanillaQNN",
+      "WeiNet",
+      "MLPClassifier",
+      "SVC",
+      "DeepEBM",
+      "RestrictedBoltzmannMachine"
+    ]
+  },
+  "summary": {
+    "records": 68,
+    "official_exports": 27,
+    "associated_model_configurations": 48
+  },
+  "sources": {
+    "benchmark2024": {
+      "title": "Better than classical? The subtle art of benchmarking quantum machine learning models",
+      "url": "https://arxiv.org/abs/2403.07059",
+      "kind": "primary_paper"
+    },
+    "circuit2018": {
+      "title": "Circuit-centric quantum classifiers",
+      "url": "https://arxiv.org/abs/1804.00633",
+      "kind": "primary_paper"
+    },
+    "hierarchy2018": {
+      "title": "Hierarchical quantum classifiers",
+      "url": "https://arxiv.org/abs/1804.03680",
+      "kind": "primary_paper"
+    },
+    "tree2020": {
+      "title": "Toward Trainability of Quantum Neural Networks",
+      "url": "https://arxiv.org/abs/2011.06258",
+      "kind": "primary_paper"
+    },
+    "reupload2019": {
+      "title": "Data re-uploading for a universal quantum classifier",
+      "url": "https://arxiv.org/abs/1907.02085",
+      "kind": "primary_paper"
+    },
+    "dressed2019": {
+      "title": "Transfer learning in hybrid classical-quantum neural networks",
+      "url": "https://arxiv.org/abs/1912.08278",
+      "kind": "primary_paper"
+    },
+    "feature2018": {
+      "title": "Supervised learning with quantum enhanced feature spaces",
+      "url": "https://arxiv.org/abs/1804.11326",
+      "kind": "primary_paper"
+    },
+    "projected2020": {
+      "title": "Power of data in quantum machine learning",
+      "url": "https://arxiv.org/abs/2011.01938",
+      "kind": "primary_paper"
+    },
+    "qbm2020": {
+      "title": "Variational Quantum Boltzmann Machines",
+      "url": "https://arxiv.org/abs/2006.06004",
+      "kind": "primary_paper"
+    },
+    "qks2018": {
+      "title": "Quantum Kitchen Sinks",
+      "url": "https://arxiv.org/abs/1806.08321",
+      "kind": "primary_paper"
+    },
+    "metric2020": {
+      "title": "Quantum embeddings for machine learning",
+      "url": "https://arxiv.org/abs/2001.03622",
+      "kind": "primary_paper"
+    },
+    "quanv2019": {
+      "title": "Quanvolutional Neural Networks",
+      "url": "https://arxiv.org/abs/1904.04767",
+      "kind": "primary_paper"
+    },
+    "weinet2021": {
+      "title": "A Quantum Convolutional Neural Network on NISQ Devices",
+      "url": "https://arxiv.org/abs/2104.06918",
+      "kind": "primary_paper"
+    },
+    "qcnn2018": {
+      "title": "Quantum Convolutional Neural Networks",
+      "url": "https://arxiv.org/abs/1810.03787",
+      "kind": "primary_paper"
+    },
+    "qrc2016": {
+      "title": "Harnessing disordered quantum dynamics for machine learning",
+      "url": "https://arxiv.org/abs/1602.08159",
+      "kind": "primary_paper"
+    },
+    "qelm2022": {
+      "title": "Potential and limitations of quantum extreme learning machines",
+      "url": "https://arxiv.org/abs/2210.00780",
+      "kind": "primary_paper"
+    },
+    "qcbm2018": {
+      "title": "Differentiable Learning of Quantum Circuit Born Machine",
+      "url": "https://arxiv.org/abs/1804.04168",
+      "kind": "primary_paper"
+    },
+    "qgan2018": {
+      "title": "Quantum generative adversarial networks",
+      "url": "https://arxiv.org/abs/1804.08641",
+      "kind": "primary_paper"
+    },
+    "qae2016": {
+      "title": "Quantum autoencoders for efficient compression of quantum data",
+      "url": "https://arxiv.org/abs/1612.02806",
+      "kind": "primary_paper"
+    },
+    "qlstm2020": {
+      "title": "Quantum Long Short-Term Memory",
+      "url": "https://arxiv.org/abs/2009.01783",
+      "kind": "primary_paper"
+    },
+    "qrnn2020": {
+      "title": "Recurrent Quantum Neural Networks",
+      "url": "https://arxiv.org/abs/2006.14619",
+      "kind": "primary_paper"
+    },
+    "qgnn2019": {
+      "title": "Quantum Graph Neural Networks",
+      "url": "https://arxiv.org/abs/1909.12264",
+      "kind": "primary_paper"
+    },
+    "qrl2021": {
+      "title": "Parametrized quantum policies for reinforcement learning",
+      "url": "https://arxiv.org/abs/2103.05577",
+      "kind": "primary_paper"
+    },
+    "qaoa2014": {
+      "title": "A Quantum Approximate Optimization Algorithm",
+      "url": "https://arxiv.org/abs/1411.4028",
+      "kind": "primary_paper"
+    },
+    "vqe2013": {
+      "title": "A variational eigenvalue solver on a quantum processor",
+      "url": "https://arxiv.org/abs/1304.3061",
+      "kind": "primary_paper"
+    },
+    "cv2018": {
+      "title": "Continuous-variable quantum neural networks",
+      "url": "https://arxiv.org/abs/1806.06871",
+      "kind": "primary_paper"
+    },
+    "qsvm2013": {
+      "title": "Quantum support vector machine for big data classification",
+      "url": "https://arxiv.org/abs/1307.0471",
+      "kind": "primary_paper"
+    },
+    "qpca2013": {
+      "title": "Quantum principal component analysis",
+      "url": "https://arxiv.org/abs/1307.0401",
+      "kind": "primary_paper"
+    },
+    "interference2017": {
+      "title": "Implementing a distance-based classifier with a quantum interference circuit",
+      "url": "https://arxiv.org/abs/1703.10793",
+      "kind": "primary_paper"
+    },
+    "qboost2012": {
+      "title": "QBoost: Large Scale Classifier Training with Adiabatic Quantum Optimization",
+      "url": "https://proceedings.mlr.press/v25/neven12.html",
+      "kind": "primary_paper"
+    },
+    "psqa2026": {
+      "title": "Feasibility study of quantum-classical hybrid networks for patient-specific quality assurance in radiotherapy",
+      "url": "https://doi.org/10.1016/j.radphyschem.2026.113981",
+      "kind": "primary_paper"
+    },
+    "repo_circuit_centric": {
+      "title": "Xanadu qml-benchmarks: circuit_centric.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/circuit_centric.py",
+      "kind": "official_repository"
+    },
+    "repo_data_reuploading": {
+      "title": "Xanadu qml-benchmarks: data_reuploading.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/data_reuploading.py",
+      "kind": "official_repository"
+    },
+    "repo_dressed_quantum_circuit": {
+      "title": "Xanadu qml-benchmarks: dressed_quantum_circuit.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/dressed_quantum_circuit.py",
+      "kind": "official_repository"
+    },
+    "repo_iqp_kernel": {
+      "title": "Xanadu qml-benchmarks: iqp_kernel.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/iqp_kernel.py",
+      "kind": "official_repository"
+    },
+    "repo_iqp_variational": {
+      "title": "Xanadu qml-benchmarks: iqp_variational.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/iqp_variational.py",
+      "kind": "official_repository"
+    },
+    "repo_projected_quantum_kernel": {
+      "title": "Xanadu qml-benchmarks: projected_quantum_kernel.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/projected_quantum_kernel.py",
+      "kind": "official_repository"
+    },
+    "repo_quantum_boltzmann_machine": {
+      "title": "Xanadu qml-benchmarks: quantum_boltzmann_machine.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/quantum_boltzmann_machine.py",
+      "kind": "official_repository"
+    },
+    "repo_quantum_kitchen_sinks": {
+      "title": "Xanadu qml-benchmarks: quantum_kitchen_sinks.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/quantum_kitchen_sinks.py",
+      "kind": "official_repository"
+    },
+    "repo_quantum_metric_learning": {
+      "title": "Xanadu qml-benchmarks: quantum_metric_learning.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/quantum_metric_learning.py",
+      "kind": "official_repository"
+    },
+    "repo_quanvolutional_neural_network": {
+      "title": "Xanadu qml-benchmarks: quanvolutional_neural_network.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/quanvolutional_neural_network.py",
+      "kind": "official_repository"
+    },
+    "repo_separable": {
+      "title": "Xanadu qml-benchmarks: separable.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/separable.py",
+      "kind": "official_repository"
+    },
+    "repo_tree_tensor": {
+      "title": "Xanadu qml-benchmarks: tree_tensor.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/tree_tensor.py",
+      "kind": "official_repository"
+    },
+    "repo_vanilla_qnn": {
+      "title": "Xanadu qml-benchmarks: vanilla_qnn.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/vanilla_qnn.py",
+      "kind": "official_repository"
+    },
+    "repo_weinet": {
+      "title": "Xanadu qml-benchmarks: weinet.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/weinet.py",
+      "kind": "official_repository"
+    },
+    "repo_energy_based_model": {
+      "title": "Xanadu qml-benchmarks: energy_based_model.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/energy_based_model.py",
+      "kind": "official_repository"
+    },
+    "repo_convolutional_neural_network": {
+      "title": "Xanadu qml-benchmarks: convolutional_neural_network.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/convolutional_neural_network.py",
+      "kind": "official_repository"
+    },
+    "repo___init__": {
+      "title": "Xanadu qml-benchmarks: __init__.py",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/main/src/qml_benchmarks/models/__init__.py",
+      "kind": "official_repository"
+    },
+    "sk_dummy": {
+      "title": "scikit-learn dummy.DummyClassifier",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.dummy.DummyClassifier.html",
+      "kind": "official_documentation"
+    },
+    "sk_logistic": {
+      "title": "scikit-learn linear_model.LogisticRegression",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html",
+      "kind": "official_documentation"
+    },
+    "sk_linear_svm": {
+      "title": "scikit-learn svm.SVC (linear kernel, probability=False in this registry)",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html",
+      "kind": "official_documentation"
+    },
+    "sk_gbdt": {
+      "title": "scikit-learn ensemble.GradientBoostingClassifier",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html",
+      "kind": "official_documentation"
+    },
+    "sk_forest": {
+      "title": "scikit-learn ensemble.RandomForestClassifier",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html",
+      "kind": "official_documentation"
+    },
+    "sk_rff": {
+      "title": "scikit-learn kernel_approximation.RBFSampler",
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.kernel_approximation.RBFSampler.html",
+      "kind": "official_documentation"
+    },
+    "pl_mps": {
+      "title": "PennyLane MPS template",
+      "url": "https://docs.pennylane.ai/en/stable/code/api/pennylane.MPS.html",
+      "kind": "official_documentation"
+    },
+    "qbm_amin2016": {
+      "title": "Quantum Boltzmann Machine",
+      "url": "https://arxiv.org/abs/1601.02036",
+      "kind": "primary_paper"
+    },
+    "repo_data_reuploading_pinned": {
+      "title": "Xanadu data_reuploading.py, pinned source used by the staged adapter",
+      "url": "https://github.com/XanaduAI/qml-benchmarks/blob/c226205f5442e49df609904ce8c37e1bb4d3ad98/src/qml_benchmarks/models/data_reuploading.py",
+      "kind": "official_repository"
+    }
+  },
+  "records": [
+    {
+      "id": "circuit_centric",
+      "canonical_name": "Circuit-centric quantum classifier",
+      "aliases": [
+        "CircuitCentricClassifier"
+      ],
+      "family_id": "variational",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "CircuitCentricClassifier",
+      "training_registry_ids": [
+        "amplitude_vqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "circuit2018",
+        "repo_circuit_centric"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "幅度编码、输入态副本及受控旋转。代码中5q补零幅度VQC不复现官方多副本、门表和平方损失。"
+    },
+    {
+      "id": "classical_cnn",
+      "canonical_name": "Classical convolutional neural network",
+      "aliases": [
+        "ConvolutionalNeuralNetwork",
+        "CNN"
+      ],
+      "family_id": "classical_cnn",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": "ConvolutionalNeuralNetwork",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_convolutional_neural_network"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "官方类面向二维图像网格；普通汇总表格不具有天然图像邻域，需要有科学依据的空间表示。"
+    },
+    {
+      "id": "data_reuploading",
+      "canonical_name": "Data re-uploading classifier",
+      "aliases": [
+        "DataReuploadingClassifier",
+        "data reuploading"
+      ],
+      "family_id": "data_reuploading",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "DataReuploadingClassifier",
+      "training_registry_ids": [
+        "reupload_full17_5q",
+        "reupload_full17_1q",
+        "reupload_reference_base_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "reupload2019",
+        "repo_data_reuploading",
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "重复加载输入。代码中1q/5q分块加载全部17维，与官方可训练尺度、类别权重、保真度损失不同。"
+    },
+    {
+      "id": "reupload_no_scaling",
+      "canonical_name": "Data re-uploading without trainable scaling",
+      "aliases": [
+        "DataReuploadingClassifierNoScaling"
+      ],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": "DataReuploadingClassifierNoScaling",
+      "training_registry_ids": [
+        "reupload_reference_no_scaling_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_data_reuploading",
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "官方变体删除omega并合并Rot门，属于复合变化；单因素冻结omega另列matched控制。"
+    },
+    {
+      "id": "reupload_no_cost",
+      "canonical_name": "Data re-uploading with alternate linear cost",
+      "aliases": [
+        "DataReuploadingClassifierNoCost"
+      ],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": "DataReuploadingClassifierNoCost",
+      "training_registry_ids": [
+        "reupload_reference_no_cost_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_data_reuploading",
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "官方目标mean((1-y_signed*sum(Z_all))/2)使用所有qubit之和，可为负；不是没有损失，也不是平均误分类概率。"
+    },
+    {
+      "id": "reupload_no_trainable_embedding",
+      "canonical_name": "Data re-uploading NoTrainableEmbedding ablation",
+      "aliases": [
+        "DataReuploadingClassifierNoTrainableEmbedding"
+      ],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": "DataReuploadingClassifierNoTrainableEmbedding",
+      "training_registry_ids": [
+        "reupload_reference_no_trainable_embedding_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_data_reuploading",
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "omega仍可训练；把全部输入编码前置，再做处理层，最终门分解也变；不是完全固定编码。"
+    },
+    {
+      "id": "reupload_separable",
+      "canonical_name": "Separable data re-uploading classifier",
+      "aliases": [
+        "DataReuploadingClassifierSeparable"
+      ],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": "DataReuploadingClassifierSeparable",
+      "training_registry_ids": [
+        "reupload_reference_separable_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_data_reuploading",
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "官方同时删除CZ并合并Rot门，属于复合变化；单因素去CZ另列matched控制。"
+    },
+    {
+      "id": "dressed",
+      "canonical_name": "Dressed quantum circuit classifier",
+      "aliases": [
+        "DressedQuantumCircuitClassifier",
+        "dressed QNN"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "DressedQuantumCircuitClassifier",
+      "training_registry_ids": [
+        "dressed_vqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "dressed2019",
+        "repo_dressed_quantum_circuit"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "经典前端连接量子层及经典读出；代码实现小型前端，不复现预训练迁移学习协议。"
+    },
+    {
+      "id": "dressed_only_nn",
+      "canonical_name": "Dressed classifier with classical middle layer",
+      "aliases": [
+        "DressedQuantumCircuitClassifierOnlyNN"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "variant",
+      "variant_of": "dressed",
+      "category": "classical_classifier",
+      "official_export": "DressedQuantumCircuitClassifierOnlyNN",
+      "training_registry_ids": [
+        "dressed_classical_5d"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_dressed_quantum_circuit"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "前后端及接口维度匹配的经典中间层，共151参数；dressed实现为147参数，不是严格参数量匹配或上游逐项复现。"
+    },
+    {
+      "id": "dressed_separable",
+      "canonical_name": "Separable dressed quantum circuit classifier",
+      "aliases": [
+        "DressedQuantumCircuitClassifierSeparable"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "variant",
+      "variant_of": "dressed",
+      "category": "quantum_classifier",
+      "official_export": "DressedQuantumCircuitClassifierSeparable",
+      "training_registry_ids": [
+        "dressed_separable_5q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_dressed_quantum_circuit"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "保留dressed实现的147参数和前后端，仅移除12个CNOT；属于匹配控制。"
+    },
+    {
+      "id": "iqp_kernel",
+      "canonical_name": "IQP fidelity kernel classifier",
+      "aliases": [
+        "IQPKernelClassifier",
+        "IQP kernel SVM"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "variant",
+      "variant_of": "fidelity_kernel",
+      "category": "quantum_classifier",
+      "official_export": "IQPKernelClassifier",
+      "training_registry_ids": [
+        "kernel_iqp_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "feature2018",
+        "repo_iqp_kernel"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "IQP态重叠平方进入经典SVM；代码中PCA5和角度是本项目适配，输出未经概率校准的margin。"
+    },
+    {
+      "id": "iqp_variational",
+      "canonical_name": "IQP variational classifier",
+      "aliases": [
+        "IQPVariationalClassifier"
+      ],
+      "family_id": "variational",
+      "record_kind": "variant",
+      "variant_of": "vanilla_qnn",
+      "category": "quantum_classifier",
+      "official_export": "IQPVariationalClassifier",
+      "training_registry_ids": [
+        "iqp_vqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "feature2018",
+        "repo_iqp_variational"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "代码中Rot/CNOT读出不等同官方CZ StronglyEntanglingLayers及线性损失。"
+    },
+    {
+      "id": "projected_kernel",
+      "canonical_name": "Projected quantum kernel",
+      "aliases": [
+        "ProjectedQuantumKernel",
+        "PQK"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "ProjectedQuantumKernel",
+      "training_registry_ids": [
+        "kernel_projected_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "projected2020",
+        "repo_projected_quantum_kernel"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "局部X/Y/Z接经典RBF；代码中共享ZZ映射未复现官方Hamiltonian/IQP全部变体。"
+    },
+    {
+      "id": "qbm",
+      "canonical_name": "Variational quantum Boltzmann machine classifier",
+      "aliases": [
+        "QuantumBoltzmannMachine",
+        "VQBM",
+        "QBM"
+      ],
+      "family_id": "quantum_boltzmann",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "QuantumBoltzmannMachine",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "qbm2020",
+        "repo_quantum_boltzmann_machine"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "官方直接计算完美Gibbs态，原算法的变分虚时近似具有不同成本/误差。"
+    },
+    {
+      "id": "qbm_separable",
+      "canonical_name": "Separable quantum Boltzmann machine",
+      "aliases": [
+        "QuantumBoltzmannMachineSeparable"
+      ],
+      "family_id": "quantum_boltzmann",
+      "record_kind": "variant",
+      "variant_of": "qbm",
+      "category": "quantum_classifier",
+      "official_export": "QuantumBoltzmannMachineSeparable",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_quantum_boltzmann_machine"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "上游单qubit Gibbs组合仍缺实现；条件Gibbs无耦合控制单列，不混淆两种定义。"
+    },
+    {
+      "id": "qks",
+      "canonical_name": "Quantum kitchen sinks",
+      "aliases": [
+        "QuantumKitchenSinks",
+        "QKS",
+        "random quantum features"
+      ],
+      "family_id": "fixed_quantum_features",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "QuantumKitchenSinks",
+      "training_registry_ids": [
+        "random_quantum_features_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "qks2018",
+        "repo_quantum_kitchen_sinks"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "冻结随机映射、经典线性读出；代码中解析期望80维，不是逐次采样bitstring方案。"
+    },
+    {
+      "id": "metric",
+      "canonical_name": "Quantum metric learner",
+      "aliases": [
+        "QuantumMetricLearner",
+        "quantum metric learning"
+      ],
+      "family_id": "quantum_metric_learning",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "QuantumMetricLearner",
+      "training_registry_ids": [
+        "quantum_metric_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "metric2020",
+        "repo_quantum_metric_learning"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "类别监督优化态相似性；代码中pairwise fidelity MSE再SVM，官方QAOAEmbedding加类别原型比较。"
+    },
+    {
+      "id": "quanvolution",
+      "canonical_name": "Quanvolutional neural network",
+      "aliases": [
+        "QuanvolutionalNeuralNetwork",
+        "quanvolution"
+      ],
+      "family_id": "quanvolution",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "QuanvolutionalNeuralNetwork",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "quanv2019",
+        "repo_quanvolutional_neural_network"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "固定局部量子预处理后接经典CNN；需要空间网格，区别于Cong式QCNN。"
+    },
+    {
+      "id": "separable_vqc",
+      "canonical_name": "Separable variational classifier",
+      "aliases": [
+        "SeparableVariationalClassifier",
+        "unentangled VQC"
+      ],
+      "family_id": "variational",
+      "record_kind": "variant",
+      "variant_of": "vanilla_qnn",
+      "category": "quantum_classifier",
+      "official_export": "SeparableVariationalClassifier",
+      "training_registry_ids": [
+        "separable_vqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_separable",
+        "benchmark2024"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "无纠缠单比特变分映射；代码中5q可学读出非官方平均Z加固定sigmoid。"
+    },
+    {
+      "id": "separable_kernel",
+      "canonical_name": "Separable product-state kernel classifier",
+      "aliases": [
+        "SeparableKernelClassifier"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "variant",
+      "variant_of": "fidelity_kernel",
+      "category": "quantum_classifier",
+      "official_export": "SeparableKernelClassifier",
+      "training_registry_ids": [
+        "kernel_separable_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_separable",
+        "benchmark2024"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "乘积态重叠核；需保留经典闭式计算控制，没有纠缠不等于没有非线性。"
+    },
+    {
+      "id": "tree_tensor",
+      "canonical_name": "Tree tensor quantum classifier",
+      "aliases": [
+        "TreeTensorClassifier",
+        "TTN classifier"
+      ],
+      "family_id": "tensor_network_circuits",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "TreeTensorClassifier",
+      "training_registry_ids": [
+        "ttn_pca8_8q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "tree2020",
+        "repo_tree_tensor",
+        "hierarchy2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "官方TreeTensor采用幅度输入及自己的门序；代码中PCA8角度树是TTN谱系适配。"
+    },
+    {
+      "id": "vanilla_qnn",
+      "canonical_name": "Variational quantum classifier / vanilla QNN",
+      "aliases": [
+        "VanillaQNN",
+        "VQC",
+        "QNN"
+      ],
+      "family_id": "variational",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "VanillaQNN",
+      "training_registry_ids": [
+        "vqc_pca5_angle_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_vanilla_qnn",
+        "feature2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "角度嵌入和可训练线路；VQC/PQC/QNN术语重叠，不能据别名重复计数。"
+    },
+    {
+      "id": "weinet",
+      "canonical_name": "Wei quantum convolutional image classifier",
+      "aliases": [
+        "WeiNet",
+        "Wei QCNN"
+      ],
+      "family_id": "weinet",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": "WeiNet",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "weinet2021",
+        "repo_weinet"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "幅度图像、空间滤波与池化，官方基准使用经典混合近似；不同于quanvolution和Cong QCNN。"
+    },
+    {
+      "id": "classical_mlp",
+      "canonical_name": "Multilayer perceptron",
+      "aliases": [
+        "MLPClassifier",
+        "MLP"
+      ],
+      "family_id": "classical_mlp",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": "MLPClassifier",
+      "training_registry_ids": [
+        "small_mlp"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo___init__"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "代码中small_mlp是本项目小网络，非官方默认100×100及其完整优化设置。"
+    },
+    {
+      "id": "classical_rbf_svm",
+      "canonical_name": "RBF support-vector classifier",
+      "aliases": [
+        "SVC",
+        "RBF-SVM"
+      ],
+      "family_id": "classical_svm",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": "SVC",
+      "training_registry_ids": [
+        "rbf_svm"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo___init__"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "非线性经典基线；本项目缩放单独冻结，SVM输出未经概率校准的margin。"
+    },
+    {
+      "id": "classical_deep_ebm",
+      "canonical_name": "Deep energy-based model",
+      "aliases": [
+        "DeepEBM"
+      ],
+      "family_id": "classical_generative",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_generative",
+      "official_export": "DeepEBM",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_energy_based_model"
+      ],
+      "input_requirements": "different_learning_task",
+      "adaptation_limits": "官方导出的经典生成模型；需另外定义生成/密度目标，不能直接填分类准确率。"
+    },
+    {
+      "id": "classical_rbm",
+      "canonical_name": "Restricted Boltzmann machine",
+      "aliases": [
+        "RestrictedBoltzmannMachine",
+        "RBM"
+      ],
+      "family_id": "classical_generative",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_generative",
+      "official_export": "RestrictedBoltzmannMachine",
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "repo_energy_based_model"
+      ],
+      "input_requirements": "different_learning_task",
+      "adaptation_limits": "经典Bernoulli RBM；连续输入需要明确概率或离散表示及下游分类器。"
+    },
+    {
+      "id": "qcnn_cong",
+      "canonical_name": "Convolution-pooling QCNN (Cong–Choi–Lukin)",
+      "aliases": [
+        "QCNN",
+        "Cong QCNN"
+      ],
+      "family_id": "qcnn",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "qcnn_pca8_8q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qcnn2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "PCA8共享卷积/池化适配；PCA分量的相邻位置不具有天然空间含义，非原文量子相分类复现。"
+    },
+    {
+      "id": "mps_classifier",
+      "canonical_name": "Matrix product state circuit classifier",
+      "aliases": [
+        "MPS classifier",
+        "sequential tensor-network circuit"
+      ],
+      "family_id": "tensor_network_circuits",
+      "record_kind": "variant",
+      "variant_of": "tree_tensor",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "mps_pca8_8q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "pl_mps",
+        "hierarchy2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "顺序聚合的两比特块；PCA8明确门表适配，需与经典/TTN控制比较。"
+    },
+    {
+      "id": "mera_classifier",
+      "canonical_name": "MERA-inspired hierarchical quantum classifier",
+      "aliases": [
+        "MERA classifier"
+      ],
+      "family_id": "tensor_network_circuits",
+      "record_kind": "variant",
+      "variant_of": "tree_tensor",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "mera_pca8_8q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "hierarchy2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "8q开放边界MERA-inspired门表包含4个disentangler和7个树块，66量子角与4读出参数；TTN为42角，因此拓扑与容量均改变。"
+    },
+    {
+      "id": "fidelity_kernel",
+      "canonical_name": "Fidelity quantum kernel with classical SVM",
+      "aliases": [
+        "quantum kernel estimation",
+        "QKE",
+        "QSVC (kernel estimation)"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "kernel_fidelity_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "feature2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "态重叠平方加经典SVM；小statevector可直接经典计算，不据此声称加速。"
+    },
+    {
+      "id": "trainable_kernel",
+      "canonical_name": "Target-aligned trainable quantum kernel",
+      "aliases": [
+        "kernel target alignment",
+        "trainable quantum embedding"
+      ],
+      "family_id": "quantum_metric_learning",
+      "record_kind": "variant",
+      "variant_of": "metric",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "kernel_trainable_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "metric2020",
+        "feature2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "仅训练标签优化核对齐，再固定核训SVM；与metric的目标/读出分开。"
+    },
+    {
+      "id": "amplitude_kernel",
+      "canonical_name": "Amplitude-state fidelity kernel",
+      "aliases": [
+        "amplitude quantum kernel"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "variant",
+      "variant_of": "fidelity_kernel",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "kernel_amplitude_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "circuit2018",
+        "feature2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "归一化幅度内积平方存在经典闭式计算；这是编码变体。"
+    },
+    {
+      "id": "kernel_knn",
+      "canonical_name": "Quantum-kernel nearest-neighbour readout",
+      "aliases": [
+        "kernel kNN",
+        "quantum kernel + classical kNN"
+      ],
+      "family_id": "quantum_kernel",
+      "record_kind": "variant",
+      "variant_of": "fidelity_kernel",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "kernel_knn_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "feature2018",
+        "interference2017"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "固定量子核加经典邻居搜索；不实现量子并行搜索或原文干涉线路。"
+    },
+    {
+      "id": "qrc_temporal",
+      "canonical_name": "Quantum reservoir computing with memory",
+      "aliases": [
+        "QRC",
+        "quantum reservoir computing"
+      ],
+      "family_id": "quantum_reservoir",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_sequence_model",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qrc2016"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "跨时刻量子态记忆需要序列输入；控制点序列需另定MU或时间语义，独立表格行不能自动视作时间序列。"
+    },
+    {
+      "id": "qrc_static",
+      "canonical_name": "Reset-per-sample static quantum reservoir",
+      "aliases": [
+        "static reservoir",
+        "reset reservoir"
+      ],
+      "family_id": "quantum_reservoir",
+      "record_kind": "variant",
+      "variant_of": "qrc_temporal",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "static_reservoir_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qrc2016",
+        "qelm2022"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "每个输入独立重置初态，固定动力学的多个时刻观测接线性读出；没有跨输入的状态记忆。"
+    },
+    {
+      "id": "qelm",
+      "canonical_name": "Quantum extreme learning machine",
+      "aliases": [
+        "QELM",
+        "quantum extreme learning"
+      ],
+      "family_id": "fixed_quantum_features",
+      "record_kind": "variant",
+      "variant_of": "qks",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "quantum_extreme_learning_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qelm2022",
+        "qks2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "固定映射只训读出；代码中随机特征加RidgeClassifier是适配，非量子态估计复现。"
+    },
+    {
+      "id": "residual_hybrid",
+      "canonical_name": "Residual classical–quantum classifier",
+      "aliases": [
+        "residual hybrid QNN",
+        "classical readout bypass"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "variant",
+      "variant_of": "dressed",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "residual_vqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "dressed2019"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "本项目组合经典logit旁路与可学权重量子分支；引用支撑dressed谱系，不宣称该残差公式来自Mari原文。"
+    },
+    {
+      "id": "psqa_pqc_anchor",
+      "canonical_name": "PSQA paper PQC bridge",
+      "aliases": [
+        "paper PQC"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "application_adaptation",
+      "variant_of": "dressed",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "anchor_paper_pqc_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "psqa2026"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "依据原文Fig1角编码及经典前后端进行显式适配；输入采用单层MLC复杂度特征，不等同原文双层MLC及完整实验。"
+    },
+    {
+      "id": "psqa_qfm_anchor",
+      "canonical_name": "PSQA paper QFM bridge",
+      "aliases": [
+        "paper QFM"
+      ],
+      "family_id": "dressed_hybrid",
+      "record_kind": "application_adaptation",
+      "variant_of": "dressed",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "anchor_paper_qfm_5q"
+      ],
+      "registry_relation": "family_adaptation_not_exact_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "psqa2026"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "披露过的ZZ映射选择和45角ansatz；QFM名不是所有量子特征映射模型的等价别名。"
+    },
+    {
+      "id": "qcbm",
+      "canonical_name": "Quantum circuit Born machine",
+      "aliases": [
+        "QCBM",
+        "Born machine"
+      ],
+      "family_id": "quantum_generative",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_generative",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qcbm2018"
+      ],
+      "input_requirements": "different_learning_task",
+      "adaptation_limits": "学习测量分布/MMD，需连续17维编码及生成检验；增强不得使用测试标签。"
+    },
+    {
+      "id": "qgan",
+      "canonical_name": "Quantum generative adversarial network",
+      "aliases": [
+        "QGAN",
+        "QuGAN"
+      ],
+      "family_id": "quantum_generative",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_generative",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qgan2018"
+      ],
+      "input_requirements": "different_learning_task",
+      "adaptation_limits": "生成器/判别器对抗训练；需定义条件生成或表征适配。"
+    },
+    {
+      "id": "qautoencoder",
+      "canonical_name": "Quantum autoencoder",
+      "aliases": [
+        "QAE",
+        "quantum autoencoder"
+      ],
+      "family_id": "quantum_representation",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_representation",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qae2016"
+      ],
+      "input_requirements": "requires_quantum_data_or_oracle",
+      "adaptation_limits": "原文压缩量子态；经典17维需先编码，另定重建损失、测量与读出。"
+    },
+    {
+      "id": "qlstm",
+      "canonical_name": "Quantum long short-term memory",
+      "aliases": [
+        "QLSTM"
+      ],
+      "family_id": "quantum_sequence",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_sequence_model",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qlstm2020"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "量子线路替换部分LSTM门；需要控制点/时间序列及相同输入经典LSTM。"
+    },
+    {
+      "id": "qrnn",
+      "canonical_name": "Recurrent quantum neural network",
+      "aliases": [
+        "QRNN"
+      ],
+      "family_id": "quantum_sequence",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_sequence_model",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qrnn2020"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "Bausch量子递归单元不同于QLSTM门替换；需定义状态保留与测量。"
+    },
+    {
+      "id": "qgnn",
+      "canonical_name": "Quantum graph neural network",
+      "aliases": [
+        "QGNN",
+        "quantum graph network"
+      ],
+      "family_id": "quantum_graph",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_graph_model",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qgnn2019"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "需物理可解释的叶片/控制点/计划图及经典GNN控制。"
+    },
+    {
+      "id": "qgrnn",
+      "canonical_name": "Quantum graph recurrent neural network",
+      "aliases": [
+        "QGRNN"
+      ],
+      "family_id": "quantum_graph",
+      "record_kind": "variant",
+      "variant_of": "qgnn",
+      "category": "quantum_graph_model",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qgnn2019"
+      ],
+      "input_requirements": "requires_new_representation",
+      "adaptation_limits": "QGNN共享动力学递归变体，不等于普通QRNN。"
+    },
+    {
+      "id": "qrl",
+      "canonical_name": "Parametrized quantum policy learning",
+      "aliases": [
+        "quantum reinforcement learning",
+        "quantum policy gradient"
+      ],
+      "family_id": "quantum_reinforcement",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_reinforcement",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qrl2021"
+      ],
+      "input_requirements": "different_learning_task",
+      "adaptation_limits": "需要环境、动作、回报；离线QA标签不提供MDP。"
+    },
+    {
+      "id": "qboost",
+      "canonical_name": "QBoost / annealing-based boosting",
+      "aliases": [
+        "QBoost",
+        "adiabatic boosting"
+      ],
+      "family_id": "quantum_annealing",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qboost2012"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "弱学习器选择转成离散优化；需冻结QUBO、经典精确/模拟退火控制，分开硬件和模拟。"
+    },
+    {
+      "id": "qaoa",
+      "canonical_name": "Quantum approximate optimization algorithm",
+      "aliases": [
+        "QAOA"
+      ],
+      "family_id": "quantum_optimization",
+      "record_kind": "algorithm_component",
+      "variant_of": null,
+      "category": "optimization_component",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qaoa2014"
+      ],
+      "input_requirements": "component_not_classifier",
+      "adaptation_limits": "可作特征/弱模型选择求解器，本身不是完整分类器；QAOAEmbedding不等于QAOA优化。"
+    },
+    {
+      "id": "vqe",
+      "canonical_name": "Variational quantum eigensolver",
+      "aliases": [
+        "VQE"
+      ],
+      "family_id": "quantum_optimization",
+      "record_kind": "algorithm_component",
+      "variant_of": null,
+      "category": "optimization_component",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "vqe2013"
+      ],
+      "input_requirements": "component_not_classifier",
+      "adaptation_limits": "求Hamiltonian低能态；VQC用经典梯度不应因此改名VQE。"
+    },
+    {
+      "id": "cvqnn",
+      "canonical_name": "Continuous-variable quantum neural network",
+      "aliases": [
+        "CV-QNN",
+        "photonic QNN"
+      ],
+      "family_id": "continuous_variable",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [],
+      "related_registry_ids": [
+        "cv_kerr_1mode_cut32",
+        "cv_gaussian_1mode_cut32"
+      ],
+      "registry_relation": "separate_bounded_Fock_children_not_original_experiment",
+      "implementation_status": "family_adaptations_present_reference_missing",
+      "exact_reference_implementation_status": "missing_implementation",
+      "source_ids": [
+        "cv2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "CV谱系已有单模式有界有限Fock Kerr适配及Gaussian对照；原文多模式实验/完整SF软件路径仍未复现。"
+    },
+    {
+      "id": "hhl_qsvm",
+      "canonical_name": "Linear-system quantum support-vector machine",
+      "aliases": [
+        "HHL QSVM",
+        "quantum least-squares SVM"
+      ],
+      "family_id": "fault_tolerant_linear_algebra",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qsvm2013"
+      ],
+      "input_requirements": "requires_quantum_data_or_oracle",
+      "adaptation_limits": "依赖矩阵/态访问和量子线性求解；与代码中经典SVM配量子核不同。"
+    },
+    {
+      "id": "qpca",
+      "canonical_name": "Quantum principal component analysis",
+      "aliases": [
+        "qPCA"
+      ],
+      "family_id": "fault_tolerant_linear_algebra",
+      "record_kind": "algorithm_component",
+      "variant_of": null,
+      "category": "representation_component",
+      "official_export": null,
+      "training_registry_ids": [],
+      "registry_relation": "none",
+      "implementation_status": "missing_implementation",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qpca2013"
+      ],
+      "input_requirements": "requires_quantum_data_or_oracle",
+      "adaptation_limits": "密度矩阵多副本量子操作；代码中sklearn PCA完全是经典预处理。"
+    },
+    {
+      "id": "interference_classifier",
+      "canonical_name": "Quantum interference distance classifier",
+      "aliases": [
+        "distance-based quantum classifier",
+        "interference classifier"
+      ],
+      "family_id": "quantum_distance",
+      "record_kind": "family",
+      "variant_of": null,
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "interference_distance_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "interference2017"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "6q逐对参考线路的闭式Born条件概率适配，保留样本先验且未校准；未实现原文coherent-index/label寄存器，不作量子并行或加速声明。"
+    },
+    {
+      "id": "constant_control",
+      "canonical_name": "Always-pass reference",
+      "aliases": [
+        "constant classifier",
+        "always pass"
+      ],
+      "family_id": "classical_dummy",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "always_pass"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_dummy"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "不使用特征的常量分类对照；高准确率不保证少数类检出能力。"
+    },
+    {
+      "id": "logistic_control",
+      "canonical_name": "Logistic regression",
+      "aliases": [
+        "logistic regression"
+      ],
+      "family_id": "classical_linear",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "logistic"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_logistic"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "线性概率基线；与量子/RFF映射后的相同读出比较。"
+    },
+    {
+      "id": "linear_svm_control",
+      "canonical_name": "Linear support-vector classifier",
+      "aliases": [
+        "linear SVM"
+      ],
+      "family_id": "classical_svm",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "linear_svm"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_linear_svm"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "经典线性margin；本轮未进行概率校准。"
+    },
+    {
+      "id": "gbdt_control",
+      "canonical_name": "Gradient-boosted decision trees",
+      "aliases": [
+        "GBDT",
+        "gradient boosting"
+      ],
+      "family_id": "classical_trees",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "gbdt"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_gbdt"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "表格非线性强控制；默认配置不等于充分调参上限。"
+    },
+    {
+      "id": "forest_control",
+      "canonical_name": "Random forest",
+      "aliases": [
+        "RF",
+        "random forest"
+      ],
+      "family_id": "classical_trees",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "random_forest"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_forest"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "bagging随机树，与GBDT不同，遵守相同组折分。"
+    },
+    {
+      "id": "rff_control",
+      "canonical_name": "Random Fourier features with linear readout",
+      "aliases": [
+        "RFF",
+        "random Fourier features"
+      ],
+      "family_id": "classical_random_features",
+      "record_kind": "control",
+      "variant_of": null,
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "rff_linear"
+      ],
+      "registry_relation": "classical_control",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "sk_rff"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "固定经典随机映射的容量控制；保存特征数和读出。"
+    },
+    {
+      "id": "reupload_matched_no_scaling",
+      "canonical_name": "Data re-uploading matched fixed-scale control",
+      "aliases": [],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "reupload_matched_no_scaling_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "仅固定omega=1，保留base分离Rot门；不同于官方NoScaling同时合并门的复合变化。"
+    },
+    {
+      "id": "reupload_matched_separable",
+      "canonical_name": "Data re-uploading matched no-entanglement control",
+      "aliases": [],
+      "family_id": "data_reuploading",
+      "record_kind": "variant",
+      "variant_of": "data_reuploading",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "reupload_matched_separable_6q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "repo_data_reuploading_pinned"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "仅去CZ，保留base分离Rot及omega；不同于官方Separable同时合并门的复合变化。"
+    },
+    {
+      "id": "qbm_conditional_exact",
+      "canonical_name": "Conditional transverse-field Gibbs classifier with exact matrix exponential",
+      "aliases": [],
+      "family_id": "quantum_boltzmann",
+      "record_kind": "variant",
+      "variant_of": "qbm",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "gibbs_qbm_3q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qbm_amin2016"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "3q条件Hamiltonian：17维输入进入纵场，3个可学ZZ耦合和正横场；固定beta=1，以精确Gibbs边缘NLL训练60参数。Torch稠密矩阵指数模拟；不是上游Zoufal默认QBM、概率上界、虚时制备或量子硬件。"
+    },
+    {
+      "id": "qbm_conditional_exact_separable",
+      "canonical_name": "Uncoupled conditional Gibbs matched control",
+      "aliases": [],
+      "family_id": "quantum_boltzmann",
+      "record_kind": "variant",
+      "variant_of": "qbm_conditional_exact",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "gibbs_separable_3q"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qbm_amin2016"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "固定全部J=0，共57登记参数；密度严格因子化，隐藏wire参数从输出边缘消去，有效可见参数19。属于同条件Gibbs模型的无耦合控制，不冒充上游Separable类。"
+    },
+    {
+      "id": "qboost_fixed_dictionary_exact",
+      "canonical_name": "Fixed-dictionary sparse QUBO selection with classical exhaustive search",
+      "aliases": [],
+      "family_id": "quantum_annealing",
+      "record_kind": "control",
+      "variant_of": "qboost",
+      "category": "classical_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "qboost_qubo_12_classical"
+      ],
+      "registry_relation": "explicit_adapter_not_end_to_end_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "qboost2012"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "量子优化谱系的经典对照：训练内选至多12个桩，固定稀疏平方损失QUBO并枚举至多4096解；非原文完整迭代QBoost、非模拟退火或量子硬件。"
+    },
+    {
+      "id": "cv_bounded_fock_kerr",
+      "canonical_name": "Bounded single-mode finite-Fock Kerr hybrid classifier",
+      "aliases": [],
+      "family_id": "continuous_variable",
+      "record_kind": "variant",
+      "variant_of": "cvqnn",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "cv_kerr_1mode_cut32"
+      ],
+      "registry_relation": "bounded_finite_model_adaptation_not_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "cv2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "单模式3层K D R S R，训练C32、24/40只数值验收，参数严格有界；Torch矩阵指数及三矩经典softmax读出，共62参数。不是无限维精确、SF原版或原文多模式分类实验。"
+    },
+    {
+      "id": "cv_bounded_fock_gaussian",
+      "canonical_name": "Matched Gaussian control for the bounded finite-Fock hybrid",
+      "aliases": [],
+      "family_id": "continuous_variable",
+      "record_kind": "control",
+      "variant_of": "cv_bounded_fock_kerr",
+      "category": "quantum_classifier",
+      "official_export": null,
+      "training_registry_ids": [
+        "cv_gaussian_1mode_cut32"
+      ],
+      "registry_relation": "bounded_finite_model_adaptation_not_reference_reproduction",
+      "implementation_status": "registry_adapter_present",
+      "exact_reference_implementation_status": "not_claimed",
+      "source_ids": [
+        "cv2018"
+      ],
+      "input_requirements": "direct_tabular",
+      "adaptation_limits": "只禁用Kerr，全部共享参数同seed初始化；59参数对照Kerr62，不是参数数量严格相等。Gaussian态可用经典相空间矩高效模拟，含经典非线性前后端；不冒充非高斯CV-QNN。"
+    }
+  ]
+}
